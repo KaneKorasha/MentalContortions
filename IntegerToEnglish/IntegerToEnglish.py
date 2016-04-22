@@ -5,16 +5,28 @@
 
 def main():
     userNumber = raw_input('Enter your number in integer form: ')
-    print userNumber
-    numConvert(userNumber)
+    loopNumber(userNumber)
     return
 
-def numConvert(userNumber):
-    numWord = {1: 'One', 2: 'Two', 3: 'Three', 4: 'Four', 5: 'Five', 6: 'Six', 7: 'Seven', 8: 'Eight', 9: 'Nine', 10: 'Ten', 0: 'Zero'}
-    number = userNumber[0]
-    print number
+def loopNumber(userNumber):
+    finalNumber = ''
+    while userNumber != '':
+        #print userNumber
+        numWord = {'1': 'One', '2': 'Two', '3': 'Three', '4': 'Four', '5': 'Five', \
+               '6': 'Six', '7': 'Seven', '8': 'Eight', '9': 'Nine', '0': 'zero'}
+        number = userNumber[0]
+        stringNumber = numWord[number]
+        finalNumber = finalNumber + ' ' + stringNumber
+        userNumber = userNumber[1:]
+    print finalNumber
+    return
+
+def numConvert(userNumber, finalNumber):
+
+    #print userNumber
+    return userNumber, finalNumber
     
 main()
 
 print '\n'
-input('Press enter to exit.')
+exit = raw_input('Press enter to exit.')
